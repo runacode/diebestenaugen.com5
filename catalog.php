@@ -221,7 +221,7 @@ include 'includes/data.php';
 </script>
 <script lang="template/html" type="template/html" id="WasTemplate">
     <div class="col-6 ">
-        <?= T('WAS'); ?>
+        <?= T('Was'); ?>
     </div>
 </script>
 <script lang="template/html" type="template/html" id="TotalTemplate">
