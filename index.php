@@ -188,6 +188,22 @@ include 'includes/data.php';
 
 </script>
 <script src="resources/js/main.min.js?1=2"></script>
+
+<script lang="template/html" type="template/html" id="WasTepmlate">
+    <div class="col-6 ">
+        <?= T('WAS'); ?>
+    </div>
+</script>
+<script lang="template/html" type="template/html" id="TotalTepmlate">
+    <div class="col-6 ">
+        <?= T('Total'); ?>
+    </div>
+</script>
+<script lang="template/html" type="template/html" id="SavingTepmlate">
+    <div class="col-6 ">
+        <?= T('Saving'); ?>
+    </div>
+</script>
 <script lang="template/html" type="template/html" id="CartBottomTemplate">
     <div class="container cart-bottom">
         <div class="row">
