@@ -170,6 +170,7 @@ window.cart = {
             r += data.currency + this.getCartWas();
             r += '</div>';
             r += '</div>';
+            r += '<div class="row saving">';
             r+= document.querySelector('#SavingTemplate').innerHTML
             r += '<div class="col-6 ">';
             r += data.currency + Math.round((this.getCartWas()-this.getCartTotal()) * 100) / 100;
