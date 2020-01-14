@@ -96,13 +96,13 @@ $ksdk = new KonnektiveSDK($pageType, $deviceType);
             </div>
 
             <div class='kform_spacer'>
-                <input name='city' type='TEXT' isRequired>
+                <select name='city'  type='TEXT' isRequired>
+                    <option value=''><?= T('Select City'); ?></option>
+                </select>
             </div>
 
-            <div class='kform_spacer'>
-                <select name='state' isRequired>
-                    <option value=''><?= T('Select State'); ?></option>
-                </select>
+            <div class='kform_spacer' style="display:none">
+                <input type="hidden" name='state' />
             </div>
 
             <div class='kform_spacer'>
@@ -127,15 +127,16 @@ $ksdk = new KonnektiveSDK($pageType, $deviceType);
                 <div class='kform_spacer'>
                     <input name='shipAddress2' type='TEXT'>
                 </div>
-
                 <div class='kform_spacer'>
-                    <input name='shipCity' type='TEXT' isRequired>
-                </div>
-
-                <div class='kform_spacer'>
-                    <select name='shipState' isRequired>
+                    <select name='shipCity'   isRequired>
+                        <option value=''><?= T('Select City'); ?></option>
                     </select>
                 </div>
+
+                <div class='kform_spacer' style="display:none">
+                    <input type="hidden" name='shipState' />
+                </div>
+
 
                 <div class='kform_spacer'>
                     <select name='shipCountry'></select>
