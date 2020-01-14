@@ -3,10 +3,10 @@ error_reporting(0);
 
 //This code must be included at the top of your script before any output is sent to the browser
 //-even before <!DOCTYPE> declaration
-require_once realpath(dirname(__FILE__)."/resources/konnektiveSDK.php");
+require_once realpath(dirname(__FILE__) . "/resources/konnektiveSDK.php");
 $pageType = "catalogPage"; //choose from: presalePage, leadPage, checkoutPage, upsellPage1, upsellPage2, upsellPage3, upsellPage4, thankyouPage
 $deviceType = "ALL"; //choose from: DESKTOP, MOBILE, ALL
-$ksdk = new KonnektiveSDK($pageType,$deviceType);
+$ksdk = new KonnektiveSDK($pageType, $deviceType);
 $offers = $ksdk->getOffers();
 include 'includes/data.php';
 
@@ -19,14 +19,14 @@ include 'includes/data.php';
         <?php echo $product->rand_head ?>
     </title>
 
-<meta name="viewport" content="width=device-width" />
-<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+    <meta charset="utf-8"/>
 
 
     <?php
-//this line of code must go either inside the <head> </head> tags or inside the <body></body> tags
-$ksdk->echoJavascript();
-?>
+    //this line of code must go either inside the <head> </head> tags or inside the <body></body> tags
+    $ksdk->echoJavascript();
+    ?>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
             integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
             crossorigin="anonymous"></script>
@@ -49,7 +49,6 @@ $ksdk->echoJavascript();
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
 
 
 <header class="container-fluid p-0">
@@ -133,7 +132,7 @@ $ksdk->echoJavascript();
             </div>
             <div class="row">
                 <div class="col-12">
-                    <button class="add-to-cart" ><?php echo $product->add_to_cart ?></button>
+                    <button class="add-to-cart"><?php echo $product->add_to_cart ?></button>
                 </div>
             </div>
             <div class="row">
@@ -187,7 +186,7 @@ $ksdk->echoJavascript();
             <i class="fa fa-users">&nbsp;</i><span>222</span> people are looking at the same product as you
         </div>
         <div class="col-12">
-            <button class="add-to-cart" ><?php echo $product->add_to_cart ?></button>
+            <button class="add-to-cart"><?php echo $product->add_to_cart ?></button>
         </div>
     </div>
 </div>
@@ -220,8 +219,48 @@ $ksdk->echoJavascript();
         </div>
     </div>
 </script>
+<script lang="template/html" type="template/html" id="WasTemplate">
+    <div class="col-6 ">
+        <?= T('WAS'); ?>
+    </div>
+</script>
+<script lang="template/html" type="template/html" id="TotalTemplate">
+    <div class="col-6 ">
+        <?= T('Total'); ?>
+    </div>
+</script>
+<script lang="template/html" type="template/html" id="SavingTemplate">
+    <div class="col-6 ">
+        <?= T('Saving'); ?>
+    </div>
+</script>
+
+<script lang="template/html" type="template/html" id="CartBottomTemplate">
+    <div class="container cart-bottom">
+        <div class="row">
+            <div class="col-12 name">
+                <div><a class="checkout-button" target="_top" href="/checkout.php"><?= T('Check Out'); ?> <i
+                                class="fa fa-arrow-circle-right"></i></a></div>
+            </div>
+            <div><img class="img-fluid pl-5 pt-1 pr-5" src="resources/images/sponsors-01.jpg"/></div>
+            <div class="accepted-payment">
+                <h3><?= T('Accepted Payment Methods'); ?></h3>
+                <img src="resources/images/sponsors-02.jpg">
+            </div>
+            <div class="d-flex satisfaction-guaranteed">' +
+                <div><img src="resources/images/satisfaction-guaranteed.jpg"/></div>
+                <div><?= T('Our products are backed by a risk-free'); ?>
+                    <em><?= T('30-day money-back'); ?></em><?= T('guarantee If you are not completely satisfied with your purchase'); ?>
+                    <em><?= T('for ANY REASON'); ?></em>, <?= T('we will do'); ?>
+                    <em><?= T('WHATEVER it takes'); ?></em><?= T('to make it right'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
 <script lang="template/html" type="template/html" id="CartTempty">
-    <div class="mt-3 mb-3"><?= T('Your cart is empty'); ?><br><?= T('Please add some items to proceed shopping'); ?></div>
+    <div class="mt-3 mb-3"><?= T('Your cart is empty'); ?><br><?= T('Please add some items to proceed shopping'); ?>
+    </div>
 </script>
 </body>
 </html>
