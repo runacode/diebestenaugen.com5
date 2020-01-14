@@ -3,7 +3,7 @@ kvalidate_config.submitErrorPosition = 'dialog';
 kvalidate_config.inputErrorDisplayType = 'popup';
 kvalidate_config.inputErrorPosition = 'top';
 <?php
-include_once(dirname(__FILE__) . '/../../locale/languages.php');
+include_once(dirname(__FILE__) . '/../../includes/data.php');
 ?>
 if(!kvalidate_config)
     kvalidate_config = {};
