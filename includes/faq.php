@@ -24,13 +24,13 @@
     <p><?= T('We have many testimonials from customers who have already received their purchases on our website, Facebook and Instagram!'); ?></p>
 
     <h5><?= T('How do I buy it?'); ?></h5>
-    <p><?= T('It\'s quite simple! Just go on the product page you want to purchase, choose the model and the quantity and click \Add to Cart\" ��"'); ?></p>
+    <p><?= T('It\'s quite simple! Just go on the product page you want to purchase, choose the model and the quantity and click "Add to Cart"'); ?></p>
     <p><?= T('You will be redirected to your shopping cart where you can finalize the request to enter your address and payment information'); ?></p>
 
     <h3><?= T('REQUEST'); ?></h3>
 
     <h5><?= T('Do you ship to my city?'); ?></h5>
-    <p><?= T('Yes, we send to all country safely and to the address provided at the time of purchase! Please make sure to correctly enter the address at the time of purchase ��'); ?></p>
+    <p><?= T('Yes, we send to all country safely and to the address provided at the time of purchase! Please make sure to correctly enter the address at the time of purchase'); ?></p>
 
 
     <h3><?= T('Deadlines and Delivery'); ?></h3>
@@ -49,7 +49,7 @@
     </p>
 
     <h5><?= T('My order is not being moved or updated What to do?'); ?></h5>
-    <p><?= T('Your order status may remain the same for a few days, but don\'t worry, this is normal! ��'); ?></p>
+    <p><?= T('Your order status may remain the same for a few days, but don\'t worry, this is normal!'); ?></p>
     <p><?= T('Tracking information will be updated when the package arrives in UK If your order is not delivered within 20 working days, please contact our customer support team by email'); ?>:
         <a href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a><?= T('Our team is always available to serve you and your email will be answered within 24 working hours!'); ?>
     </p>
@@ -60,7 +60,7 @@
         <br><?= T('Call the nearest post office from your location and check if they can release your package so you can go there and pick it up with your document and your tracking code'); ?>
     </p>
     <p><?= T('We recommend that you do so urgently, because the post office keep the product a time for withdrawal and this time the recipient does not get the product, they send back to the supplier'); ?>
-        <br><?= T('If you have any questions about the code or procedure, please send an email to our support, we will help you ��'); ?>
+        <br><?= T('If you have any questions about the code or procedure, please send an email to our support, we will help you'); ?>
     </p>
 
     <h3><?= T('Return, Refund and Exchange (Guarantee)'); ?></h3>
