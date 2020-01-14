@@ -11,8 +11,8 @@ $customer = $ksdk->getSessValue('customer');
 
 //where user is sent after clicking the "Continue Shopping" html button
 $shopUrl = $ksdk->getPageUrl('catalogPage');
-		
-		
+
+
 		?>
 <div id='kcartDetail'>
 	<br>
@@ -20,36 +20,36 @@ $shopUrl = $ksdk->getPageUrl('catalogPage');
     <!-- the href attribute does not usually go on input buttons, but we've added it here as the button behaves like a link
     and sends the user to the url specified in the href attribute -->
     <input type='button' value='Continue Shopping' class='kcartShopButton' href="<?php echo $shopUrl; ?>">
-    <div id='kcartTitle'>Your Shopping Cart</div>
-    
+    <div id='kcartTitle'><?= T('Your Shopping Cart'); ?></div>
+
     <?php if(!empty($customer)) { ?>
     	<span class='kcartLogoutWrap'>
-        	logged in as <?php echo $customer->emailAddress; ?>
-            <span id='kcartLogout'>log out</span>
+        	<?= T('logged in as'); ?> <?php echo $customer->emailAddress; ?>
+            <span id='kcartLogout'><?= T('log out'); ?></span>
         </span>
     <?php } else {?>
-    	<span  class='kcartLogoutWrap'> Have an Account ? </span><span id='kcartSigninButton'>Sign In</span>
+    	<span  class='kcartLogoutWrap'> <?= T('Have an Account ?'); ?> </span><span id='kcartSigninButton'><?= T('Sign In'); ?></span>
     	<?php
 	}
 		//build a table with column titles
 		?>
 <table id='kcartTable'>
-	<tr id='kcartTitleRow'> 
-    	<td  style='width:200px'>Item</td>
-        <td>Qty</td>
-        <td>Description</td> 
-        <td>Amount</td> 
-        <td >&nbsp;</td> 
+	<tr id='kcartTitleRow'>
+    	<td  style='width:200px'><?= T('Item'); ?></td>
+        <td><?= T('Qty'); ?></td>
+        <td><?= T('Description'); ?></td>
+        <td><?= T('Amount'); ?></td>
+        <td >&nbsp;</td>
     </tr>
 		<?php
-		
+
 		//If cart is empty, display a message about the empty cart
 		if(empty($cart))
 		{
 			?>
 	<tr>
         <td colspan=5 id='kcartEmptyCartWarning'>
-    Your shopping cart is currently empty. Click the continue shopping button to add products to your cart.
+            <?= T('Your shopping cart is currently empty. Click the continue shopping button to add products to your cart.'); ?>
         </td>
     </tr>
 </table>
@@ -63,22 +63,22 @@ $shopUrl = $ksdk->getPageUrl('catalogPage');
 			//get detailed information about the individual item
 			//details are stored in an object in the products array
 			$item = $products[$productId];
-			
+
 			//define variables to output in html
 			$name = $item->name;
 			$description = "<i>*description unvailable</i>";
 			if(!empty($item->description))
 				$description = $item->description;
-				
+
 			$currency = $ksdk->currencySymbol;
 			$itemSubTotal = number_format($item->price,2);
 			//by mafiozzzza
 			$itemSubTotal = number_format($item->price * $qty,2);
 			$imageUrl = $item->imagePath;
-			
+
 			//build the row <tr>
-			
-			?>			
+
+			?>
 	<tr class='kcartItem' productId='<?php echo $productId ?>'>
         <td>
             <img src='<?php echo $imageUrl ?>' class='kcartProductImage'>
@@ -86,40 +86,41 @@ $shopUrl = $ksdk->getPageUrl('catalogPage');
         <td>
             <div class="name"><?php echo  $name ?></div>
         	<div style='white-space:nowrap' class="description">
-                <div>Quantity</div>
+                <div><?= T('Quantity'); ?></div>
                 <div>
                     <span class='kcartMinusBtn'>-</span>
                     <span class='kcartItemQty'><?php echo $qty ?></span>
                     <span class='kcartPlusBtn'>+</span> Unit<?php echo $qty > 1 ? 's' : ''; ?>
                 </div>
             </div>
-            <div class="subtotal"><div>Subtotal</div><div><?php echo  $currency ?><?php echo $itemSubTotal; ?></div></div>
-            <div class="low-stock"><img src="resources/images/low_battery.jpg"/> LOW STOCK</div>
+            <div class="subtotal"><div><?= T('Subtotal'); ?></div><div><?php echo  $currency ?><?php echo $itemSubTotal; ?></div></div>
+            <div class="low-stock"><img src="resources/images/low_battery.jpg"/> <?= T('LOW STOCK'); ?></div>
         </td>
     </tr>
-<?php 
+<?php
 		}
-		
+
 		//done looping, close out the table
-		
+
 		?>
 	</table>
-    <div class="customers-love">Customers love this product! <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>(4.9/5)</div>
+    <div class="customers-love"><?= T('Customers love this product!'); ?> <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>(4.9/5)</div>
     <div class="review-highlights">
-        <div class="title">Review Highlights</div>
+        <div class="title"><?= T('Review Highlights'); ?></div>
         <div class="items">
             <div>
                 <div><i class="fa fa-star"></i></div>
                 <div>
-                    <div><b>"Works if you keep to the plan"</b></div>
-                    <div>73 related reviews</div>
+                    <div><b>"<?= T('Works if you keep to the plan'); ?>"</b></div>
+                    <div>73 <?= T('related reviews'); ?></div>
                 </div>
             </div>
             <div>
                 <div><i class="fa fa-star"></i></div>
                 <div>
-                    <div><b>"I have noticed quite an improvement in my lashes"</b></div>
-                    <div>57 related reviews</div>
+                    <div><b>"<?= T('I have noticed quite an improvement in my lashes'); ?>"</b></div>
+                    <div>57 <?= T('related reviews'); ?></div>
                 </div>
             </div>
         </div>
