@@ -189,17 +189,17 @@ include 'includes/data.php';
 </script>
 <script src="resources/js/main.min.js?1=2"></script>
 
-<script lang="template/html" type="template/html" id="WasTepmlate">
+<script lang="template/html" type="template/html" id="WasTemplate">
     <div class="col-6 ">
         <?= T('WAS'); ?>
     </div>
 </script>
-<script lang="template/html" type="template/html" id="TotalTepmlate">
+<script lang="template/html" type="template/html" id="TotalTemplate">
     <div class="col-6 ">
         <?= T('Total'); ?>
     </div>
 </script>
-<script lang="template/html" type="template/html" id="SavingTepmlate">
+<script lang="template/html" type="template/html" id="SavingTemplate">
     <div class="col-6 ">
         <?= T('Saving'); ?>
     </div>
