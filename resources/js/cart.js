@@ -165,25 +165,18 @@ window.cart = {
             r += '</div>';
             r += '<div class="container cart-total">';
             r += '<div class="row was">';
-            r += '<div class="col-6 ">';
-            r += 'WAS';
-            r += '</div>';
+            r+= document.querySelector('#WasTemplate').innerHTML
             r += '<div class="col-6 ">';
             r += data.currency + this.getCartWas();
             r += '</div>';
             r += '</div>';
-            r += '<div class="row saving">';
-            r += '<div class="col-6 ">';
-            r += 'SAVING';
-            r += '</div>';
+            r+= document.querySelector('#SavingTemplate').innerHTML
             r += '<div class="col-6 ">';
             r += data.currency + Math.round((this.getCartWas()-this.getCartTotal()) * 100) / 100;
             r += '</div>';
             r += '</div>';
             r += '<div class="row total">';
-            r += '<div class="col-6 ">';
-            r += 'TOTAL';
-            r += '</div>';
+            r+= document.querySelector('#TotalTemplate').innerHTML
             r += '<div class="col-6 ">';
             r += data.currency + this.getCartTotal();
             r += '</div>';
