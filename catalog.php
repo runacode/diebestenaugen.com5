@@ -8,8 +8,8 @@ $pageType = "catalogPage"; //choose from: presalePage, leadPage, checkoutPage, u
 $deviceType = "ALL"; //choose from: DESKTOP, MOBILE, ALL
 $ksdk = new KonnektiveSDK($pageType,$deviceType);
 $offers = $ksdk->getOffers();
-
 include 'includes/data.php';
+
 
 ?>
 <!DOCTYPE html>
