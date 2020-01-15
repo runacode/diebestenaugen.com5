@@ -183,7 +183,7 @@ include 'includes/data.php';
 <div class="container-fluid bottom-add-to-cart">
     <div class="row">
         <div class="col-12 persons-online">
-            <i class="fa fa-users">&nbsp;</i><span>222</span> people are looking at the same product as you
+            <i class="fa fa-users">&nbsp;</i><span>222</span> <?= T('people are looking at the same product as you'); ?>
         </div>
         <div class="col-12">
             <button class="add-to-cart"><?php echo $product->add_to_cart ?></button>
@@ -213,7 +213,7 @@ include 'includes/data.php';
                 <div><?= T('Our products are backed by a risk-free'); ?>
                     <em><?= T('30-day money-back'); ?></em><?= T('guarantee If you are not completely satisfied with your purchase'); ?>
                     <em><?= T('for ANY REASON'); ?></em>,<?= T('we will do'); ?>
-                    <em><?= T('WHATEVER it takes'); ?></em><?= T('to make it right'); ?>
+                    <em><?= T('WHATEVER it takes'); ?></em>,<?= T('to make it right'); ?>
                 </div>
             </div>
         </div>
