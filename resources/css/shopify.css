@@ -1190,7 +1190,7 @@ header .main-part .cart-button i {
 }
 @media (max-width: 500px) {
   .page-checkout #kform #kformSubmit {
-    font-size: 9vw !important;
+    font-size: 6vw !important;
     padding: 15px;
     width: auto;
   }
@@ -1367,6 +1367,12 @@ header .main-part .cart-button i {
 }
 #contact-form input {
   width: 100% !important;
+}
+
+@media only screen and (device-width: 375px) {
+  #kformSubmit {
+    font-size: 6vw !important;
+  }
 }
 
 /*# sourceMappingURL=shopify.css.map */
