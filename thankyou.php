@@ -7,6 +7,7 @@ $pageType = "thankyouPage"; //choose from: presalePage, leadPage, checkoutPage, 
 $deviceType = "ALL"; //choose from: DESKTOP, MOBILE, ALL
 $ksdk = new KonnektiveSDK($pageType, $deviceType);
 
+$orderItem=GetOrderItem($ksdk,$data->upsell3ID);
 ?>
 <!DOCTYPE html>
 <html>
@@ -75,7 +76,7 @@ $currency = $ksdk->currencySymbol;
     <div class="container thank-you-top">
         <div class="row justify-content-center">
             <div class="kthanks">
-                    <img class="img-fluid" src="resources/images/thank-you.png"/>
+                <img class="img-fluid" src="resources/images/thank-you.png"/>
             </div>
         </div>
     </div>
@@ -177,7 +178,7 @@ $currency = $ksdk->currencySymbol;
         </div>
         <div style="clear:both"></div>
 
-        <p><?= T('*A confirmation email has been sent to'); ?> <?php echo $emailAddress ?> </p>
+        <p><?= T('*A confirmation email has been sent to'); ?><?php echo $emailAddress ?> </p>
 
     </div>
 
@@ -185,12 +186,20 @@ $currency = $ksdk->currencySymbol;
 
 <?php
 
+if ($orderItem) {
 
-include_once('pixelcode/pixelhelper.php');
+    $pageEvent = "Purchase";
+    $Value = array("value" => $orderItem->price, 'currency' => $data->FaceBookCurrency);
+    $qs = ["Event" => $pageEvent, "Value" => $Value];
+    include_once('pixelcode/pixelhelper.php');
 
+} else {
+    $PixelPage = "/upsell.html";
+
+    include_once('pixelcode/pixelhelper.php');
+}
 
 ?>
-
 
 <script>
     $.removeCookie('cart', {path: '/'});
