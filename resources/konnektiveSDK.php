@@ -910,7 +910,7 @@ window.onAmazonLoginReady = function() {
         if ($paypalPayment)
       //      $this->echoPaypalCheckoutButton();
         ?>
-        <input   type="button" value="<?php echo $value ?>"
+        <input   type="button" value="<?php echo T('Add To Order') ?>"
                  class="kform_upsellBtn" id="kformSubmit">
         <?php
     }
