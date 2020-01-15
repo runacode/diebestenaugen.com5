@@ -57,6 +57,7 @@ $CurrentLanguage = $languages[$CurrentLocale];
 function T($str)
 {
     global $CurrentLanguage,$CurrentLocale;
+
     if (!isset($CurrentLanguage[$str]) || strlen(trim($CurrentLanguage[$str])) == 0) {
         if (isset($_REQUEST['strict-lang'])) {
 
