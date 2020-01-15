@@ -45,13 +45,13 @@
 
     <h5><?= T('I want to report a problem with my order!'); ?></h5>
     <p><?= T('If you have a problem with your order, our customer support team is always available You can contact them by e-mail'); ?>:
-        <a href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a><?= T('We will answer you within 24 business hours'); ?>
+        &nbsp;&nbsp;<a href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a>&nbsp;<?= T('We will answer you within 24 business hours'); ?>
     </p>
 
     <h5><?= T('My order is not being moved or updated What to do?'); ?></h5>
     <p><?= T('Your order status may remain the same for a few days, but don\'t worry, this is normal!'); ?></p>
     <p><?= T('Tracking information will be updated when the package arrives in UK If your order is not delivered within 20 working days, please contact our customer support team by email'); ?>:
-        <a href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a><?= T('Our team is always available to serve you and your email will be answered within 24 working hours!'); ?>
+        &nbsp;&nbsp;<a href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a>&nbsp;<?= T('Our team is always available to serve you and your email will be answered within 24 working hours!'); ?>
     </p>
 
     <h5><?= T('My tracking code shows that the product is \pending removal\" (or the delivery was missing), what should I do?"'); ?></h5>
@@ -67,19 +67,19 @@
 
     <h5><?= T('I received my damaged product, what to do?'); ?></h5>
     <p><?= T('Please contact our customer support team by email'); ?>:<a
-                href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a><?= T('Always attach a photo and / or video to show the problem with your product The customer support team is always available to serve you and respond within 24 working hours Rest assured, we will find the best solution!'); ?>
+                href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a>&nbsp;<?= T('Always attach a photo and / or video to show the problem with your product The customer support team is always available to serve you and respond within 24 working hours Rest assured, we will find the best solution!'); ?>
     </p>
 
     <h5><?= T('I\'m not satisfied with the product I received How can I return it?'); ?></h5>
     <p><?= T('Please contact us, please email'); ?><a
-                href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a><?= T('We respond within 24 working hours'); ?>
+                href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a>&nbsp;<?= T('We respond within 24 working hours'); ?>
     </p>
     <p><?= T('The cost of returning the product in perfect condition to sell, will be the buyer\'s responsibility'); ?></p>
     <p><?= T('We ask you to describe in email the reason for his dissatisfaction and send us a photo and / or video of the product received so we can offer a solution'); ?></p>
 
     <h5><?= T('Can I change or cancel my order?'); ?></h5>
     <p><?= T('To cancel or change your order, send us an email to'); ?><a
-                href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a><?= T('up to 24 hours after payment'); ?>
+                href="mailto:<?= $product->support_email; ?>"><?= $product->support_email; ?></a>&nbsp;<?= T('up to 24 hours after payment'); ?>
     </p>
     <p><?= T('After this period your order has already been shipped and will be en route to the address you entered'); ?></p>
 
