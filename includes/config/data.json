@@ -4,6 +4,9 @@
   "currency": "&#8364;",
  "lang": "de",
   "FaceBookCurrency": "EUR",
+ "upsell1ID": 82,
+  "upsell2ID": 81,
+  "upsell3ID": 83,
   "products": [
     {
       "cid": 79,
