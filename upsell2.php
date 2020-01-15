@@ -58,7 +58,7 @@ include 'includes/data.php';
                 <div><?= T('WOW'); ?></div>
                 <div><img class="img-hor" src="resources/images/present.jpg" /></div>
             </div>
-            <div>You have <em><?= T('WON'); ?></em> a <em><?= T('FREE'); ?></em><br>
+            <div><em><?= T('You have WON'); ?></em>  <em><?= T('a Free'); ?></em><br>
            <?= T('FEG SERUM!'); ?></div>
         </div>
     </div>
