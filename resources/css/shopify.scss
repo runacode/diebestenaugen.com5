@@ -1280,7 +1280,7 @@ header {
       }
 
       @media(max-width: 500px) {
-        font-size: 9vw !important;
+        font-size: 6vw !important;
         padding: 15px;
         width: auto;
       }
@@ -1498,5 +1498,15 @@ $background_color_3: white;
   input{
     width: 100% !important;
   }
+}
+@media only screen
+and (device-width : 375px)
+  {
+
+  #kformSubmit {
+    font-size: 6vw !important
+  }
+
+
 }
 
