@@ -16,7 +16,7 @@
     <p><?= T('All our payments are processed and secured by Paypal and Credit Card, ensuring that all transactions are safe for us and for our customers'); ?></p>
 
     <h5><?= T('It\'s safe to shop at this store?'); ?></h5>
-    <p><?= T('Yes! We know that many customers have had bad experiences buying into other sites, but the Rocket Commerce is a serious and legitimate company that fulfills its responsibilities to all customers'); ?></p>
+    <p><?= T('Yes! We know that many customers have had bad experiences buying into other sites, but We are a serious and legitimate company that fulfills its responsibilities to all customers'); ?></p>
     <p><?= T('We take a lot of care with the information you provide to us when you place an order The server hosting the transmission of information using SSL (Secure Sockets Layer)'); ?></p>
     <p><?= T('Also, we take care to control the quality of all our products before shipment, so your experience with us will be always fantastic!'); ?></p>
     <p><?= T('By shopping with us, you will have the assistance of our support anytime, by email or Facebook'); ?></p>
@@ -36,7 +36,7 @@
     <h3><?= T('Deadlines and Delivery'); ?></h3>
 
     <h5><?= T('What is the deadline?'); ?></h5>
-    <p><?= T('Usually it takes 10 to 20 bussiness days to be delivered! You can follow the tracking on the 17Track wesite https //17tracknet/en'); ?></p>
+    <p><?= T('Usually it takes 10 to 20 business days to be delivered! You can follow the tracking on the 17Track website https //17tracknet/en'); ?></p>
     <p><?= T('We pay all shipping fees for the product, so you don\'t have to pay any additional fees! )'); ?></p>
 
     <h5><?= T('How can I track the delivery?'); ?></h5>
