@@ -10,6 +10,8 @@ $productId = $ksdk->page->productId;
 $upsell = $ksdk->getProduct((int) $productId);
 
 include 'includes/data.php';
+$orderItem=GetOrderItem($ksdk,$data->upsell1ID);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,23 +104,22 @@ include 'includes/data.php';
         </div>
     </div>
     <script>
-        $(document).ready(function(){
-            $('#kformSubmit').click(UpSell);
-            $('#kform_payPalButton').click(UpSell);
-        })
-        function UpSell(){
-            if(window.fbq) {
-                window.fbq('track', 'Purchase', {value: <?php echo $upsell->price ?>, currency: <?= $data->FaceBookCurrency; ?>});
-            }
-        }
 
     </script>
     <?php
 
-    $PixelPage="/upsell.html";
+    if($orderItem){
 
+    $pageEvent = "Purchase";
+    $Value = array("value" => $orderItem->price, 'currency' => $data->FaceBookCurrency);
+    $qs = ["Event"=>$pageEvent,"Value"=>$Value];
     include_once('pixelcode/pixelhelper.php');
 
+}else {
+        $PixelPage = "/upsell.html";
+
+        include_once('pixelcode/pixelhelper.php');
+    }
 
     ?>
 </body>
