@@ -143,19 +143,6 @@ $orderTotal = $ksdk->getOrderTotal();
         </div>
     </div>
     <script>
-        $(document).ready(function () {
-            $('#kformSubmit').click(UpSell);
-            $('#kform_payPalButton').click(UpSell);
-        })
-
-        function UpSell() {
-            if (window.fbq) {
-                window.fbq('track', 'Purchase', {
-                    value: <?php echo $upsell->price ?>,
-                    currency: '<?= $data->FaceBookCurrency; ?>'
-                });
-            }
-        }
 
     </script>
     <?php
