@@ -2,12 +2,11 @@
 
 include 'includes/data.php';
 
-$city = dirname(__FILE__) . "/checkout-" . strtoupper($data->country_1) . ".php";
-if (file_exists($city)) {
-    require_once($city);
+if ($data->IsNoStateCheckOut) {
+    require_once(dirname(__FILE__) . "/checkout-no-state.php");
     die();
-}
 
+}
 
 
 //This code must be included at the top of your script before any output is sent to the browser
@@ -48,10 +47,10 @@ $ksdk = new KonnektiveSDK($pageType, $deviceType);
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     <script>
-        window.product = JSON.parse('<?php echo json_encode($product); ?>');
-        window.data = JSON.parse('<?php echo json_encode($data); ?>');
+        window.product = <?php echo json_encode($product); ?>;
+        window.data = <?php echo json_encode($data); ?>;
     </script>
-    <script src="/resources/js/cart.min.js?rand=<?php echo rand(0,1000); ?>"></script>
+    <script src="/resources/js/cart.min.js?rand=<?php echo rand(0, 1000); ?>"></script>
     <style>body {
             margin: 8px !important;
         }</style>
@@ -270,7 +269,24 @@ $ksdk = new KonnektiveSDK($pageType, $deviceType);
     <br><br>
 </div>
 <div style="clear:both; padding-bottom: 20px;"></div>
+<?php if(isset($data->Lo_Site_Id)) {
+    ?>
+    }
+    <script type='text/javascript'>
+        window.__lo_site_id = <?php echo $data->Lo_Site_Id; ?>;
 
+            (function () {
+                var wa = document.createElement('script');
+                wa.type = 'text/javascript';
+                wa.async = true;
+                wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wa, s);
+            })();
+    </script>
+    <?php
+}
+?>
 </body>
 </html>
 
@@ -278,7 +294,7 @@ $ksdk = new KonnektiveSDK($pageType, $deviceType);
 <?php
 
 $pageEvent = "InitiateCheckout";
-$qs = ["Event"=>$pageEvent];
+$qs = ["Event" => $pageEvent];
 include_once('pixelcode/pixelhelper.php');
 
 
