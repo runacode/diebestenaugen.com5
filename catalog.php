@@ -9,8 +9,6 @@ $deviceType = "ALL"; //choose from: DESKTOP, MOBILE, ALL
 $ksdk = new KonnektiveSDK($pageType, $deviceType);
 $offers = $ksdk->getOffers();
 include 'includes/data.php';
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,8 +35,8 @@ include 'includes/data.php';
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     <script>
-        window.product = JSON.parse('<?php echo json_encode($product); ?>');
-        window.data = JSON.parse('<?php echo json_encode($data); ?>');
+        window.product = <?php echo json_encode($product); ?>;
+        window.data = <?php echo json_encode($data); ?>;
     </script>
     <script src="/resources/js/cart.min.js"></script>
 
@@ -219,6 +217,24 @@ include 'includes/data.php';
         </div>
     </div>
 </script>
+<?php if(isset($data->Lo_Site_Id)) {
+    ?>
+    }
+    <script type='text/javascript'>
+        window.__lo_site_id = <?php echo $data->Lo_Site_Id; ?>;
+
+            (function () {
+                var wa = document.createElement('script');
+                wa.type = 'text/javascript';
+                wa.async = true;
+                wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wa, s);
+            })();
+    </script>
+    <?php
+}
+?>
 <script lang="template/html" type="template/html" id="WasTemplate">
     <div class="col-6 ">
         <?= T('Was'); ?>
