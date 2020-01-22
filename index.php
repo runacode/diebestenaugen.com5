@@ -37,8 +37,8 @@ include 'includes/data.php';
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
     <script>
-        window.product = JSON.parse('<?php echo json_encode($product); ?>');
-        window.data = JSON.parse('<?php echo json_encode($data); ?>');
+        window.product = <?php echo json_encode($product); ?>;
+        window.data = <?php echo json_encode($data); ?>;
     </script>
     <script src="/resources/js/cart.min.js?rand=<?php echo rand(0,1000); ?>"></script>
 
@@ -183,10 +183,24 @@ include 'includes/data.php';
 
 <?php include_once('pixelcode/pixelhelper.php'); ?>
 
+<?php if(isset($data->Lo_Site_Id)) {
+    ?>
+    }
+    <script type='text/javascript'>
+        window.__lo_site_id = <?php echo $data->Lo_Site_Id; ?>;
 
-<script>
-
-</script>
+            (function () {
+                var wa = document.createElement('script');
+                wa.type = 'text/javascript';
+                wa.async = true;
+                wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wa, s);
+            })();
+    </script>
+    <?php
+}
+?>
 <script src="resources/js/main.min.js?1=2"></script>
 
 <script lang="template/html" type="template/html" id="WasTemplate">
